@@ -1,3 +1,3 @@
 # BluetoothDiscoveryApp 
 
-<img src="https://i.imgur.com/F8SQolg.png" width="100" height="200">
+<img src="https://i.imgur.com/F8SQolg.png" width="100" height="400">
