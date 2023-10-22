@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HhV-m0-g43">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Blue Tracker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BluetoothDiscoveryApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0EP-Sq-TQd">
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="bluecell" rowHeight="90" id="hRp-ie-Bp0" customClass="BlueTableViewCell" customModule="BluetoothDiscoveryApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hRp-ie-Bp0" id="Vgv-mR-hPf">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peripherial Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e6-MT-tqB">
+                                                    <rect key="frame" x="20" y="10.999999999999998" width="353" height="20.333333333333329"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Rssi: -49" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wdY-wj-GEQ">
+                                                    <rect key="frame" x="20" y="51.333333333333336" width="353" height="27.666666666666664"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wdY-wj-GEQ" firstAttribute="bottom" secondItem="Vgv-mR-hPf" secondAttribute="bottomMargin" id="48I-tq-PGY"/>
+                                                <constraint firstItem="wdY-wj-GEQ" firstAttribute="top" secondItem="0e6-MT-tqB" secondAttribute="bottom" constant="20" id="5vW-5w-zuh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wdY-wj-GEQ" secondAttribute="trailing" id="aNI-ew-S6c"/>
+                                                <constraint firstItem="0e6-MT-tqB" firstAttribute="leading" secondItem="Vgv-mR-hPf" secondAttribute="leadingMargin" id="lll-1x-V3W"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0e6-MT-tqB" secondAttribute="trailing" id="pyg-A7-faO"/>
+                                                <constraint firstItem="0e6-MT-tqB" firstAttribute="top" secondItem="Vgv-mR-hPf" secondAttribute="topMargin" id="uMt-7U-MEU"/>
+                                                <constraint firstItem="wdY-wj-GEQ" firstAttribute="leading" secondItem="Vgv-mR-hPf" secondAttribute="leadingMargin" id="wAr-ME-xYz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="0e6-MT-tqB" id="HfW-4m-j4a"/>
+                                            <outlet property="rssiLabel" destination="wdY-wj-GEQ" id="YNz-33-Yh5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="B7i-JF-gdW"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Hb4-d8-OHX"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0EP-Sq-TQd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="FHy-JU-cmw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0EP-Sq-TQd" secondAttribute="trailing" id="a6D-ew-BBd"/>
+                            <constraint firstItem="0EP-Sq-TQd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bV7-Im-XpA"/>
+                            <constraint firstAttribute="bottom" secondItem="0EP-Sq-TQd" secondAttribute="bottom" id="si8-xx-6r5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Blue Tracker" id="5wb-nm-aYr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="fIG-cz-XtH">
+                            <connections>
+                                <action selector="refreshTapped:" destination="BYZ-38-t0r" id="qqg-ZI-ho5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="0EP-Sq-TQd" id="qOl-HJ-YQL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="976.33587786259534" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wZf-cE-OJ4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HhV-m0-g43" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CQl-oo-5qj">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fC6-gc-BYL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WrL-W2-TO2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49.618320610687022" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
